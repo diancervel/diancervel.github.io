@@ -1,0 +1,620 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mrds.fun-网址导航与资源收录_短域名_网址大全_在线工具索引</title>
+<meta name="description" content="mrds.fun 是一个简洁的网址导航与资源收录页，按分类整理实用站点、在线工具与短域名入口，帮助访问者快速找到需要的网址并整理自己的收藏。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%2316203a'/%3E%3Ccircle cx='32' cy='32' r='15' fill='none' stroke='%235eead4' stroke-width='4'/%3E%3Cpath d='M17 32h30M32 17v30' stroke='%235eead4' stroke-width='3'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --ink:#16203a;
+    --ink-soft:#3a4763;
+    --line:#dfe4ee;
+    --bg:#f6f8fc;
+    --card:#ffffff;
+    --teal:#0f9d8a;
+    --teal-soft:#e3f6f2;
+    --amber:#c98a1a;
+    --amber-soft:#fdf3e0;
+    --radius:14px;
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Noto Sans SC",system-ui,sans-serif;
+    background:var(--bg);
+    color:var(--ink);
+    line-height:1.75;
+    font-size:16px;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:var(--teal);text-decoration:none;}
+  a:hover{text-decoration:underline;}
+  .wrap{width:100%;max-width:1120px;margin:0 auto;padding:0 20px;}
+
+  /* 页头 */
+  header.site{
+    background:var(--ink);
+    color:#fff;
+    position:sticky;
+    top:0;
+    z-index:30;
+    box-shadow:0 2px 14px rgba(22,32,58,.18);
+  }
+  .bar{
+    display:flex;
+    align-items:center;
+    gap:18px;
+    min-height:64px;
+    flex-wrap:wrap;
+    padding:8px 0;
+  }
+  .logo{
+    display:flex;
+    align-items:center;
+    gap:10px;
+    font-weight:700;
+    font-size:1.15rem;
+    letter-spacing:.5px;
+    color:#fff;
+    text-decoration:none;
+  }
+  .logo:hover{text-decoration:none;}
+  .logo svg{flex:none;}
+  nav.main{
+    display:flex;
+    gap:6px;
+    flex-wrap:wrap;
+    margin-left:auto;
+  }
+  nav.main a{
+    color:#d7ddec;
+    font-size:.92rem;
+    padding:6px 11px;
+    border-radius:8px;
+  }
+  nav.main a:hover{
+    background:rgba(94,234,212,.14);
+    color:#fff;
+    text-decoration:none;
+  }
+
+  /* 首屏 */
+  .hero{
+    background:
+      radial-gradient(circle at 88% 12%,rgba(94,234,212,.16),transparent 42%),
+      radial-gradient(circle at 6% 88%,rgba(201,138,26,.14),transparent 40%),
+      var(--ink);
+    color:#fff;
+    padding:52px 0 56px;
+  }
+  .hero-grid{
+    display:grid;
+    grid-template-columns:1.35fr .85fr;
+    gap:40px;
+    align-items:center;
+  }
+  .hero h1{
+    font-size:clamp(2rem,4.6vw,3rem);
+    line-height:1.15;
+    margin:0 0 16px;
+    letter-spacing:.5px;
+    word-break:break-all;
+  }
+  .hero .lede{
+    color:#c9d3e6;
+    max-width:34em;
+    margin:0 0 24px;
+    font-size:1.02rem;
+  }
+  .tagline{
+    display:inline-block;
+    background:rgba(94,234,212,.16);
+    color:#7ff0dc;
+    border:1px solid rgba(94,234,212,.35);
+    border-radius:999px;
+    padding:3px 13px;
+    font-size:.8rem;
+    letter-spacing:1px;
+    margin-bottom:18px;
+  }
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .btn{
+    display:inline-block;
+    border-radius:10px;
+    padding:11px 22px;
+    font-size:.95rem;
+    font-weight:600;
+    border:1px solid transparent;
+  }
+  .btn:hover{text-decoration:none;}
+  .btn-primary{background:#5eead4;color:#0c2b27;}
+  .btn-primary:hover{background:#7ff0dc;}
+  .btn-ghost{border-color:rgba(255,255,255,.32);color:#fff;}
+  .btn-ghost:hover{background:rgba(255,255,255,.1);}
+  .hero-visual{
+    background:rgba(255,255,255,.05);
+    border:1px solid rgba(255,255,255,.14);
+    border-radius:var(--radius);
+    padding:20px;
+  }
+  .hero-visual h2{
+    font-size:.82rem;
+    letter-spacing:2px;
+    color:#8fa0c0;
+    margin:0 0 14px;
+    font-weight:600;
+  }
+  .hero-visual ul{list-style:none;margin:0;padding:0;}
+  .hero-visual li{
+    display:flex;
+    justify-content:space-between;
+    gap:10px;
+    padding:9px 0;
+    border-bottom:1px dashed rgba(255,255,255,.12);
+    font-size:.9rem;
+    color:#dbe3f2;
+  }
+  .hero-visual li:last-child{border-bottom:0;}
+  .hero-visual li span{color:#7ff0dc;font-size:.8rem;flex:none;}
+
+  /* 通用区块 */
+  section{padding:56px 0;}
+  section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .sec-head{margin-bottom:28px;}
+  .sec-head h2{
+    font-size:1.5rem;
+    margin:0 0 8px;
+    line-height:1.3;
+  }
+  .sec-head p{
+    margin:0;
+    color:var(--ink-soft);
+    max-width:46em;
+    font-size:.96rem;
+  }
+  .kicker{
+    display:inline-block;
+    color:var(--teal);
+    font-size:.78rem;
+    letter-spacing:2px;
+    font-weight:700;
+    margin-bottom:8px;
+  }
+
+  /* 入口卡片 */
+  .grid-3{
+    display:grid;
+    grid-template-columns:repeat(3,1fr);
+    gap:20px;
+  }
+  .card{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:22px;
+    display:flex;
+    flex-direction:column;
+    gap:10px;
+  }
+  .card .ico{
+    width:40px;height:40px;
+    border-radius:10px;
+    background:var(--teal-soft);
+    display:flex;align-items:center;justify-content:center;
+    flex:none;
+  }
+  .card h3{margin:0;font-size:1.06rem;line-height:1.4;}
+  .card p{margin:0;color:var(--ink-soft);font-size:.92rem;}
+  .card .meta{
+    margin-top:auto;
+    font-size:.8rem;
+    color:#7c89a3;
+    letter-spacing:.5px;
+  }
+
+  /* 分类导航 */
+  .cat-grid{
+    display:grid;
+    grid-template-columns:repeat(2,1fr);
+    gap:18px;
+  }
+  .cat{
+    background:var(--card);
+    border:1px solid var(--line);
+    border-radius:var(--radius);
+    padding:20px 22px;
+  }
+  .cat h3{
+    margin:0 0 12px;
+    font-size:1rem;
+    display:flex;align-items:center;gap:8px;
+  }
+  .cat h3 i{
+    width:8px;height:8px;border-radius:50%;
+    background:var(--teal);flex:none;display:inline-block;
+  }
+  .links{list-style:none;margin:0;padding:0;display:flex;flex-wrap:wrap;gap:8px;}
+  .links li a{
+    display:inline-block;
+    background:#f2f5fb;
+    border:1px solid var(--line);
+    border-radius:8px;
+    padding:4px 11px;
+    font-size:.87rem;
+    color:var(--ink-soft);
+  }
+  .links li a:hover{
+    background:var(--teal-soft);
+    border-color:#b8e8df;
+    color:#0b7266;
+    text-decoration:none;
+  }
+
+  /* 正文两栏 */
+  .prose-grid{
+    display:grid;
+    grid-template-columns:1.5fr .9fr;
+    gap:36px;
+    align-items:start;
+  }
+  .prose h2{font-size:1.5rem;margin:0 0 14px;}
+  .prose h3{font-size:1.08rem;margin:26px 0 8px;}
+  .prose p{margin:0 0 14px;color:var(--ink-soft);}
+  .prose ul{margin:0 0 16px;padding-left:20px;color:var(--ink-soft);}
+  .prose li{margin-bottom:6px;}
+  .aside{
+    background:var(--amber-soft);
+    border:1px solid #f0dcb6;
+    border-radius:var(--radius);
+    padding:22px;
+  }
+  .aside h3{margin:0 0 10px;font-size:1rem;color:#7a5310;}
+  .aside p{margin:0 0 12px;font-size:.9rem;color:#6b5223;}
+  .aside ol{margin:0;padding-left:18px;font-size:.9rem;color:#6b5223;}
+  .aside ol li{margin-bottom:7px;}
+
+  /* 下载区块 */
+  .download{
+    background:var(--ink);
+    color:#fff;
+    border-radius:var(--radius);
+    padding:32px;
+    display:flex;
+    gap:24px;
+    align-items:center;
+    flex-wrap:wrap;
+    justify-content:space-between;
+  }
+  .download h2{margin:0 0 8px;font-size:1.35rem;}
+  .download p{margin:0;color:#c9d3e6;font-size:.93rem;max-width:40em;}
+  .btn-disabled{
+    background:#5eead4;
+    color:#0c2b27;
+    border-radius:10px;
+    padding:11px 26px;
+    font-weight:700;
+    font-size:.95rem;
+    pointer-events:none;
+    opacity:.85;
+    flex:none;
+  }
+
+  /* 页尾 */
+  footer.site{
+    background:#101828;
+    color:#9aa8c2;
+    padding:38px 0 30px;
+    font-size:.88rem;
+  }
+  .foot-grid{
+    display:flex;
+    justify-content:space-between;
+    gap:24px;
+    flex-wrap:wrap;
+    align-items:flex-start;
+  }
+  .foot-brand{max-width:30em;}
+  .foot-brand .logo{margin-bottom:10px;font-size:1.05rem;}
+  .foot-brand p{margin:0;color:#8b9ab7;line-height:1.7;}
+  .foot-links{display:flex;gap:34px;flex-wrap:wrap;}
+  .foot-links div{display:flex;flex-direction:column;gap:7px;}
+  .foot-links strong{color:#cfd8e8;font-size:.82rem;letter-spacing:1px;font-weight:600;}
+  .foot-links a{color:#9aa8c2;}
+  .foot-links a:hover{color:#7ff0dc;text-decoration:none;}
+  .copy{
+    margin-top:26px;
+    padding-top:16px;
+    border-top:1px solid #1e2a42;
+    color:#7a89a5;
+    font-size:.82rem;
+  }
+
+  @media (max-width:900px){
+    .hero-grid{grid-template-columns:1fr;gap:28px;}
+    .grid-3{grid-template-columns:1fr 1fr;}
+    .prose-grid{grid-template-columns:1fr;gap:26px;}
+    .cat-grid{grid-template-columns:1fr;}
+  }
+  @media (max-width:640px){
+    body{font-size:15.5px;}
+    .bar{min-height:auto;padding:10px 0;gap:10px;}
+    nav.main{margin-left:0;width:100%;}
+    nav.main a{padding:5px 8px;font-size:.86rem;}
+    .hero{padding:34px 0 40px;}
+    .hero .lede{font-size:.96rem;}
+    .hero-visual{display:none;}
+    section{padding:36px 0;}
+    .grid-3{grid-template-columns:1fr;}
+    .download{padding:24px 20px;}
+    .btn-disabled{width:100%;text-align:center;}
+    .foot-grid{flex-direction:column;}
+    .foot-links{gap:24px;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="mrds.fun 首页">
+      <svg width="30" height="30" viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#1e2c4d"/>
+        <circle cx="32" cy="32" r="15" fill="none" stroke="#5eead4" stroke-width="4"/>
+        <path d="M17 32h30M32 17v30" stroke="#5eead4" stroke-width="3"/>
+      </svg>
+      <span>mrds.fun</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#entry">常用入口</a>
+      <a href="#cats">分类导航</a>
+      <a href="#about">关于本站</a>
+      <a href="#guide">收录说明</a>
+      <a href="#download">导航主题</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="tagline">网址导航 · 资源收录</span>
+        <h1>mrds.fun</h1>
+        <p class="lede">mrds.fun 是一个轻量的网址导航页，把日常会用到的在线工具、实用站点与短域名入口收进同一张清单。打开就能按分类找到入口，不必逐个翻收藏夹。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#cats">浏览分类导航</a>
+          <a class="btn btn-ghost" href="#about">了解收录原则</a>
+        </div>
+      </div>
+      <aside class="hero-visual" aria-label="热门入口速览">
+        <h2>热门入口速览</h2>
+        <ul>
+          <li>在线工具合集 <span>工具</span></li>
+          <li>短域名服务 <span>域名</span></li>
+          <li>阅读与资讯 <span>内容</span></li>
+          <li>图像与设计素材 <span>设计</span></li>
+          <li>效率与协作 <span>效率</span></li>
+        </ul>
+      </aside>
+    </div>
+  </div>
+
+  <!-- 常用入口 -->
+  <section id="entry">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">常用入口</span>
+        <h2>从 mrds.fun 出发的三个方向</h2>
+        <p>把访问者最常做的事拆成三条路径：找工具、找站点、收收藏。每条路径都在页内直接对应一个分区的入口，不需要再跳转。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f9d8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M14 3l7 7-9 9H5v-7z"/><path d="M13 8l3 3"/></svg>
+          </div>
+          <h3>在线工具索引</h3>
+          <p>整理格式转换、文本处理、图片压缩一类即开即用的工具入口，按用途分组，减少在搜索页间来回切换。</p>
+          <div class="meta">入口见“分类导航 · 工具”</div>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f9d8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c3 3.5 3 14 0 18M12 3c-3 3.5-3 14 0 18"/></svg>
+          </div>
+          <h3>实用站点清单</h3>
+          <p>收录内容阅读、素材获取、效率协作等类别的常用站点，每类给出少量精选，避免清单越堆越长。</p>
+          <div class="meta">入口见“分类导航”各分组</div>
+        </article>
+        <article class="card">
+          <div class="ico" aria-hidden="true">
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#0f9d8a" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6 4h12v17l-6-4-6 4z"/></svg>
+          </div>
+          <h3>收藏与归类</h3>
+          <p>把零散收藏按主题归档的思路写在收录说明里，方便对照自己的收藏夹做一次清理与重整。</p>
+          <div class="meta">入口见“收录说明”</div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 分类导航 -->
+  <section id="cats" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">分类导航</span>
+        <h2>按用途分组的网址清单</h2>
+        <p>mrds.fun 的分类以“打开后会做什么”为标准，而不是按网站名气排列。下列分组为站内锚点，后续可逐条替换为具体站点地址。</p>
+      </div>
+      <div class="cat-grid">
+        <div class="cat">
+          <h3><i aria-hidden="true"></i>在线工具</h3>
+          <ul class="links">
+            <li><a href="#cats">格式转换</a></li>
+            <li><a href="#cats">文本处理</a></li>
+            <li><a href="#cats">图片压缩</a></li>
+            <li><a href="#cats">编码解码</a></li>
+            <li><a href="#cats">单位换算</a></li>
+          </ul>
+        </div>
+        <div class="cat">
+          <h3><i aria-hidden="true"></i>短域名与跳转</h3>
+          <ul class="links">
+            <li><a href="#cats">短链接生成</a></li>
+            <li><a href="#cats">域名查询</a></li>
+            <li><a href="#cats">跳转管理</a></li>
+            <li><a href="#download">导航主题</a></li>
+          </ul>
+        </div>
+        <div class="cat">
+          <h3><i aria-hidden="true"></i>内容与阅读</h3>
+          <ul class="links">
+            <li><a href="#cats">资讯聚合</a></li>
+            <li><a href="#cats">技术文档</a></li>
+            <li><a href="#cats">电子书库</a></li>
+            <li><a href="#cats">在线词典</a></li>
+          </ul>
+        </div>
+        <div class="cat">
+          <h3><i aria-hidden="true"></i>设计与素材</h3>
+          <ul class="links">
+            <li><a href="#cats">图标库</a></li>
+            <li><a href="#cats">配色方案</a></li>
+            <li><a href="#cats">免费图库</a></li>
+            <li><a href="#cats">字体预览</a></li>
+          </ul>
+        </div>
+        <div class="cat">
+          <h3><i aria-hidden="true"></i>效率与协作</h3>
+          <ul class="links">
+            <li><a href="#cats">待办清单</a></li>
+            <li><a href="#cats">在线笔记</a></li>
+            <li><a href="#cats">文件传输</a></li>
+            <li><a href="#cats">日程安排</a></li>
+          </ul>
+        </div>
+        <div class="cat">
+          <h3><i aria-hidden="true"></i>学习与查询</h3>
+          <ul class="links">
+            <li><a href="#cats">公开课</a></li>
+            <li><a href="#cats">题库检索</a></li>
+            <li><a href="#cats">数据查询</a></li>
+            <li><a href="#cats">图书检索</a></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 关于与说明 -->
+  <section id="about">
+    <div class="wrap prose-grid">
+      <div class="prose">
+        <span class="kicker">关于本站</span>
+        <h2>mrds.fun 想解决什么问题</h2>
+        <p>收藏夹用久了会变成一堆无序的条目：同一个工具存了三遍，真正想找的那个却翻不到。mrds.fun 的做法是先定分类，再往分类里放少量入口，让每个分组都能回答“我打开它要做什么”。这样即使条目不多，也能在几秒内定位。</p>
+        <p>页面本身刻意保持轻量：没有自动播放的媒体，没有铺满屏幕的推广位，导航、分类和说明都在同一页内完成。对访问者来说，mrds.fun 更像一张贴在桌边的便签，而不是一个需要学习的系统。</p>
+
+        <h3>收录时会看的三件事</h3>
+        <ul>
+          <li>用途是否清楚：打开后能立刻知道要做什么，而不是先看一段介绍。</li>
+          <li>是否可长期访问：优先收录稳定运行的站点，减少失效入口带来的困扰。</li>
+          <li>分组是否唯一：一个站点尽量只归入一个主分类，避免重复出现。</li>
+        </ul>
+
+        <h3>如何对照使用</h3>
+        <p>如果你也有自己的收藏夹，可以借 mrds.fun 的分组方式做一次整理：先删掉重复项，再把剩下的条目按“工具、内容、设计、效率、学习”五类归位，最后为每类保留最常用的几个。整理之后的清单通常比原来短一半，但用起来更快。</p>
+        <p>需要说明的是，本页目前展示的是分类框架与入口结构，具体站点的收录会随着整理进度逐步补充。mrds.fun 不提供搜索结果排序，也不替访问者做推荐判断，只负责把入口摆清楚。</p>
+      </div>
+
+      <aside class="aside">
+        <h3>整理收藏的四步</h3>
+        <p>适合在周末花半小时做一次，之后每季度复查。</p>
+        <ol>
+          <li>导出全部书签，按访问频率排序。</li>
+          <li>删掉半年未打开、且无法说明用途的条目。</li>
+          <li>按用途归入五个主分类，重复项只留一个。</li>
+          <li>为每个分类保留三到五个入口，其余移入归档。</li>
+        </ol>
+      </aside>
+    </div>
+  </section>
+
+  <!-- 收录说明 -->
+  <section id="guide" class="alt">
+    <div class="wrap">
+      <div class="sec-head">
+        <span class="kicker">收录说明</span>
+        <h2>一个网址进入 mrds.fun 的流程</h2>
+        <p>为了让清单保持可读，收录按下面的顺序判断。顺序本身也是访问者理解本站结构的线索。</p>
+      </div>
+      <div class="grid-3">
+        <article class="card">
+          <h3>01 · 判断用途</h3>
+          <p>先问这个站点解决的是哪一类需求，能一句话说清用途的，才进入下一步。用途模糊的条目暂时不收录。</p>
+        </article>
+        <article class="card">
+          <h3>02 · 选择分类</h3>
+          <p>按“工具、短域名、内容、设计、效率、学习”六组归位，一个站点只进一个主分类，跨类需求在说明里标注。</p>
+        </article>
+        <article class="card">
+          <h3>03 · 定期复查</h3>
+          <p>入口会随站点状态变化而调整。复查时优先检查无法访问或用途已改变的条目，避免清单里留下空壳。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载 -->
+  <section id="download">
+    <div class="wrap">
+      <div class="download">
+        <div>
+          <h2>下载 mrds.fun 导航主题</h2>
+          <p>单文件导航页模板，包含页头、首屏、分类导航与收录说明四个区块，可按自己的收藏清单替换链接。当前版本尚未开放下载地址。</p>
+        </div>
+        <a class="btn-disabled" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div class="foot-brand">
+        <a class="logo" href="#top">
+          <svg width="24" height="24" viewBox="0 0 64 64" aria-hidden="true">
+            <rect width="64" height="64" rx="14" fill="#1e2c4d"/>
+            <circle cx="32" cy="32" r="15" fill="none" stroke="#5eead4" stroke-width="4"/>
+            <path d="M17 32h30M32 17v30" stroke="#5eead4" stroke-width="3"/>
+          </svg>
+          <span>mrds.fun</span>
+        </a>
+        <p>mrds.fun 是一个轻量网址导航页，按用途分组整理在线工具、短域名服务、内容阅读与效率协作入口，帮助访问者更快找到需要的网址。</p>
+      </div>
+      <div class="foot-links">
+        <div>
+          <strong>页面</strong>
+          <a href="#entry">常用入口</a>
+          <a href="#cats">分类导航</a>
+          <a href="#about">关于本站</a>
+        </div>
+        <div>
+          <strong>说明</strong>
+          <a href="#guide">收录说明</a>
+          <a href="#download">导航主题</a>
+        </div>
+      </div>
+    </div>
+    <div class="copy">mrds.fun · 网址导航与资源收录 · 页面内容随整理进度更新</div>
+  </div>
+</footer>
+
+</body>
+</html>
