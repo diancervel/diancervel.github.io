@@ -1,0 +1,480 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>豆包漫画-豆包漫画在线看_豆包漫画有什么好看的_SVG漫画小站</title>
+<meta name="description" content="豆包漫画是一个以豆包为主角的轻量漫画小站，收录日常短篇、校园小故事与生活观察，提供阅读目录、更新记录与角色介绍，帮助读者快速找到想看的豆包漫画。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%23fff3e0'/%3E%3Ccircle cx='32' cy='30' r='17' fill='%23f2b457'/%3E%3Ccircle cx='25' cy='27' r='2.6' fill='%233b2f2a'/%3E%3Ccircle cx='39' cy='27' r='2.6' fill='%233b2f2a'/%3E%3Cpath d='M26 37q6 5 12 0' stroke='%233b2f2a' stroke-width='2.4' fill='none' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+  :root{
+    --cream:#fff8ef;
+    --paper:#fffdf9;
+    --ink:#3b2f2a;
+    --ink-soft:#6b5b52;
+    --line:#ecdcc8;
+    --wheat:#f2b457;
+    --wheat-deep:#d98f2b;
+    --leaf:#7a9a72;
+    --clay:#c96a4a;
+    --radius:16px;
+    --shadow:0 8px 24px rgba(120,90,60,.08);
+  }
+  *{box-sizing:border-box;}
+  html{scroll-behavior:smooth;}
+  body{
+    margin:0;
+    background:var(--cream);
+    color:var(--ink);
+    font-family:"PingFang SC","Hiragino Sans GB","Microsoft YaHei","Source Han Sans SC",system-ui,-apple-system,sans-serif;
+    line-height:1.75;
+    -webkit-font-smoothing:antialiased;
+  }
+  a{color:inherit;text-decoration:none;}
+  .wrap{width:min(1120px,92vw);margin:0 auto;}
+
+  /* header */
+  header.site{
+    position:sticky;top:0;z-index:20;
+    background:rgba(255,248,239,.94);
+    backdrop-filter:blur(8px);
+    border-bottom:1px solid var(--line);
+  }
+  .bar{display:flex;align-items:center;gap:20px;padding:12px 0;flex-wrap:wrap;}
+  .logo{display:flex;align-items:center;gap:10px;font-weight:800;font-size:1.15rem;letter-spacing:.5px;color:var(--ink);}
+  .logo svg{width:38px;height:38px;flex:none;}
+  nav.main{margin-left:auto;display:flex;gap:6px;flex-wrap:wrap;}
+  nav.main a{
+    padding:6px 12px;border-radius:999px;font-size:.92rem;color:var(--ink-soft);
+    transition:background .2s,color .2s;
+  }
+  nav.main a:hover,nav.main a:focus-visible{background:#fff;color:var(--ink);outline:none;box-shadow:var(--shadow);}
+  .btn{
+    display:inline-flex;align-items:center;gap:6px;
+    padding:10px 18px;border-radius:999px;font-weight:700;font-size:.95rem;
+    background:var(--wheat);color:#4a3313;border:none;cursor:pointer;
+    transition:transform .15s,background .2s;
+  }
+  .btn:hover{background:var(--wheat-deep);color:#fff;transform:translateY(-1px);}
+  .btn.ghost{background:#fff;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line);}
+  .btn.ghost:hover{background:#fff4e2;color:var(--wheat-deep);}
+  .btn[aria-disabled="true"]{pointer-events:none;opacity:.85;cursor:default;transform:none;}
+
+  /* hero */
+  .hero{padding:44px 0 20px;}
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:40px;align-items:center;}
+  .eyebrow{
+    display:inline-block;font-size:.8rem;letter-spacing:2px;color:var(--wheat-deep);
+    background:#fff2dd;border-radius:999px;padding:4px 12px;margin-bottom:14px;font-weight:700;
+  }
+  h1{
+    font-size:clamp(2rem,4.6vw,3.1rem);line-height:1.2;margin:0 0 16px;font-weight:900;
+    letter-spacing:1px;
+  }
+  h1 .dot{color:var(--wheat-deep);}
+  .lead{font-size:1.02rem;color:var(--ink-soft);margin:0 0 24px;max-width:34em;}
+  .hero-actions{display:flex;gap:12px;flex-wrap:wrap;}
+  .art{
+    background:linear-gradient(160deg,#fff5e6,#ffe9cb);
+    border:1px solid var(--line);border-radius:24px;padding:18px;
+    box-shadow:var(--shadow);text-align:center;
+  }
+  .art svg{width:100%;height:auto;max-width:320px;}
+  .art p{margin:8px 0 0;font-size:.85rem;color:var(--clay);font-weight:700;letter-spacing:1px;}
+
+  /* section shell */
+  section{padding:36px 0;}
+  .sec-head{display:flex;align-items:baseline;gap:14px;margin-bottom:20px;flex-wrap:wrap;}
+  .sec-head h2{font-size:1.35rem;margin:0;font-weight:800;}
+  .sec-head .sub{font-size:.9rem;color:var(--ink-soft);}
+  .rule{flex:1;height:1px;background:var(--line);min-width:40px;}
+
+  /* cards */
+  .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;}
+  .card{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;box-shadow:var(--shadow);display:flex;flex-direction:column;gap:8px;
+    transition:transform .18s;
+  }
+  .card:hover{transform:translateY(-3px);}
+  .card .tag{font-size:.75rem;font-weight:700;letter-spacing:1px;color:var(--leaf);}
+  .card h3{margin:0;font-size:1.08rem;font-weight:800;}
+  .card p{margin:0;font-size:.92rem;color:var(--ink-soft);}
+  .card .meta{margin-top:auto;font-size:.8rem;color:#9a8a7e;}
+
+  /* list */
+  .list{display:grid;grid-template-columns:repeat(2,1fr);gap:14px;}
+  .item{
+    display:flex;gap:14px;align-items:flex-start;
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:16px;
+  }
+  .num{
+    flex:none;width:34px;height:34px;border-radius:10px;background:#fff1da;color:var(--wheat-deep);
+    display:grid;place-items:center;font-weight:900;font-size:.95rem;
+  }
+  .item h3{margin:0 0 2px;font-size:1rem;font-weight:800;}
+  .item p{margin:0;font-size:.88rem;color:var(--ink-soft);}
+
+  /* about + sidebar */
+  .split{display:grid;grid-template-columns:1.4fr .9fr;gap:24px;align-items:start;}
+  .prose p{margin:0 0 14px;color:#4a3d35;}
+  .panel{
+    background:var(--paper);border:1px solid var(--line);border-radius:var(--radius);
+    padding:20px;box-shadow:var(--shadow);
+  }
+  .panel h3{margin:0 0 12px;font-size:1rem;font-weight:800;}
+  .panel ul{margin:0;padding-left:18px;color:var(--ink-soft);font-size:.9rem;}
+  .panel li{margin-bottom:8px;}
+  .chips{display:flex;flex-wrap:wrap;gap:8px;margin-top:6px;}
+  .chip{font-size:.8rem;padding:4px 10px;border-radius:999px;background:#fff1da;color:#8a5a17;font-weight:700;}
+
+  /* filter */
+  .filter-box{
+    display:flex;gap:10px;flex-wrap:wrap;align-items:center;
+    background:var(--paper);border:1px solid var(--line);border-radius:14px;padding:14px;margin-bottom:18px;
+  }
+  .filter-box label{font-size:.86rem;font-weight:700;color:var(--ink-soft);}
+  .filter-box input,.filter-box select{
+    font:inherit;font-size:.9rem;padding:8px 12px;border-radius:10px;border:1px solid var(--line);
+    background:#fff;color:var(--ink);outline:none;
+  }
+  .filter-box input:focus,.filter-box select:focus{border-color:var(--wheat);box-shadow:0 0 0 3px #ffe9c6;}
+  .filter-box input{flex:1;min-width:140px;}
+  .filter-count{font-size:.82rem;color:var(--ink-soft);margin-left:auto;}
+  .empty{display:none;padding:18px;text-align:center;color:var(--ink-soft);font-size:.9rem;}
+
+  /* cta */
+  .cta{
+    background:linear-gradient(120deg,#ffe6c0,#ffd79a);
+    border:1px solid #f0cf9d;border-radius:24px;padding:30px;
+    display:flex;gap:20px;align-items:center;justify-content:space-between;flex-wrap:wrap;
+  }
+  .cta h2{margin:0 0 6px;font-size:1.3rem;font-weight:900;}
+  .cta p{margin:0;color:#7a5a2c;font-size:.94rem;}
+  .cta-actions{display:flex;gap:10px;flex-wrap:wrap;}
+
+  /* footer */
+  footer.site{
+    margin-top:30px;border-top:1px solid var(--line);background:#fffaf2;
+    padding:26px 0;font-size:.86rem;color:var(--ink-soft);
+  }
+  .foot-grid{display:flex;gap:20px;justify-content:space-between;flex-wrap:wrap;align-items:flex-start;}
+  .foot-brand{display:flex;align-items:center;gap:10px;font-weight:800;color:var(--ink);}
+  .foot-brand svg{width:28px;height:28px;}
+  .foot-links{display:flex;gap:16px;flex-wrap:wrap;}
+  .foot-links a:hover{color:var(--wheat-deep);}
+  .foot-note{width:100%;margin-top:14px;padding-top:12px;border-top:1px dashed var(--line);font-size:.8rem;color:#a3938a;}
+
+  @media(max-width:860px){
+    .hero-grid,.split{grid-template-columns:1fr;}
+    .art{order:-1;}
+    .cards{grid-template-columns:1fr 1fr;}
+    .list{grid-template-columns:1fr;}
+  }
+  @media(max-width:600px){
+    .bar{gap:10px;padding:10px 0;}
+    nav.main{order:3;width:100%;margin-left:0;justify-content:flex-start;}
+    nav.main a{padding:6px 10px;font-size:.86rem;}
+    .cards{grid-template-columns:1fr;}
+    .hero{padding:28px 0 12px;}
+    .lead{font-size:.96rem;}
+    .cta{padding:22px;}
+    .filter-count{margin-left:0;}
+  }
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap bar">
+    <a class="logo" href="#top" aria-label="豆包漫画 首页">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#fff3e0"/>
+        <circle cx="32" cy="30" r="17" fill="#f2b457"/>
+        <circle cx="25" cy="27" r="2.6" fill="#3b2f2a"/>
+        <circle cx="39" cy="27" r="2.6" fill="#3b2f2a"/>
+        <path d="M26 37q6 5 12 0" stroke="#3b2f2a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      </svg>
+      豆包漫画
+    </a>
+    <nav class="main" aria-label="主导航">
+      <a href="#top">首页</a>
+      <a href="#series">漫画目录</a>
+      <a href="#guide">阅读指南</a>
+      <a href="#about">关于本站</a>
+      <a href="#updates">更新记录</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <div class="wrap hero">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow">日常短篇 · 校园小故事</span>
+        <h1>豆包漫画</h1>
+        <p class="lead">豆包漫画把一颗圆润的豆包放进寻常生活里：排队买早餐、赶末班车、在教室窗边发呆。这里按篇章整理短小漫画，提供目录、角色介绍与更新记录，方便你先看简介再决定读哪一篇。</p>
+        <div class="hero-actions">
+          <a class="btn" href="#series">进入漫画目录</a>
+          <a class="btn ghost" href="#guide">先看阅读指南</a>
+        </div>
+      </div>
+      <div class="art">
+        <svg viewBox="0 0 260 220" role="img" aria-label="豆包漫画主题插画：一颗豆包与一本翻开的漫画书">
+          <rect x="0" y="0" width="260" height="220" rx="18" fill="none"/>
+          <ellipse cx="130" cy="196" rx="86" ry="10" fill="#f0dcbf"/>
+          <path d="M62 168 L130 156 L198 168 L198 190 L130 178 L62 190 Z" fill="#fffdf9" stroke="#e3cba7" stroke-width="2"/>
+          <path d="M130 156 L130 178" stroke="#e3cba7" stroke-width="2"/>
+          <path d="M78 172 q16 -8 34 -3" stroke="#e9d3b3" stroke-width="2" fill="none"/>
+          <path d="M148 169 q18 -5 34 3" stroke="#e9d3b3" stroke-width="2" fill="none"/>
+          <circle cx="130" cy="96" r="46" fill="#f2b457"/>
+          <circle cx="130" cy="96" r="46" fill="none" stroke="#e09b34" stroke-width="2"/>
+          <circle cx="113" cy="88" r="4.4" fill="#3b2f2a"/>
+          <circle cx="147" cy="88" r="4.4" fill="#3b2f2a"/>
+          <path d="M116 108 q14 10 28 0" stroke="#3b2f2a" stroke-width="3.4" fill="none" stroke-linecap="round"/>
+          <circle cx="104" cy="103" r="6" fill="#f8c987" opacity=".9"/>
+          <circle cx="156" cy="103" r="6" fill="#f8c987" opacity=".9"/>
+          <path d="M118 52 q12 -14 24 0" stroke="#e09b34" stroke-width="3" fill="none" stroke-linecap="round"/>
+          <circle cx="196" cy="46" r="7" fill="#7a9a72" opacity=".55"/>
+          <circle cx="66" cy="52" r="5" fill="#c96a4a" opacity=".45"/>
+        </svg>
+        <p>一颗豆包的日常分镜</p>
+      </div>
+    </div>
+  </div>
+
+  <section id="series" class="wrap">
+    <div class="sec-head">
+      <h2>漫画目录</h2>
+      <span class="sub">按篇章挑选，每篇可独立阅读</span>
+      <span class="rule"></span>
+    </div>
+
+    <div class="filter-box">
+      <label for="kw">查找篇章</label>
+      <input id="kw" type="search" placeholder="输入篇名或关键词，如 早餐 / 窗边" autocomplete="off">
+      <label for="cat">分类</label>
+      <select id="cat">
+        <option value="all">全部</option>
+        <option value="日常">日常</option>
+        <option value="校园">校园</option>
+        <option value="生活观察">生活观察</option>
+      </select>
+      <span class="filter-count" id="count" aria-live="polite"></span>
+    </div>
+
+    <div class="cards" id="grid">
+      <article class="card" data-cat="日常" data-text="早餐铺的早晨 排队 豆浆">
+        <span class="tag">日常</span>
+        <h3>早餐铺的早晨</h3>
+        <p>豆包漫画的开幕短篇。豆包排在长队末尾，看老板把豆浆舀进纸杯，最后决定多要一枚茶叶蛋。</p>
+        <span class="meta">全 12 格 · 单篇完结</span>
+      </article>
+      <article class="card" data-cat="校园" data-text="课桌上的橡皮 同桌 教室">
+        <span class="tag">校园</span>
+        <h3>课桌上的橡皮</h3>
+        <p>同桌借走橡皮又忘了还。豆包漫画用四格呈现一段安静的教室午后，结尾停在窗外的云上。</p>
+        <span class="meta">全 4 格 · 四格短篇</span>
+      </article>
+      <article class="card" data-cat="生活观察" data-text="末班车 站台 回家 路灯">
+        <span class="tag">生活观察</span>
+        <h3>末班车之前</h3>
+        <p>站台只剩两盏灯。豆包漫画记录等车的十分钟，没有台词，靠分镜里的影子推进节奏。</p>
+        <span class="meta">全 9 格 · 无对白</span>
+      </article>
+      <article class="card" data-cat="日常" data-text="下雨天 伞 便利店 屋檐">
+        <span class="tag">日常</span>
+        <h3>屋檐下的伞</h3>
+        <p>雨来得突然，豆包在便利店门口蹭了半小时屋檐。豆包漫画把这段等待画成六格连续镜头。</p>
+        <span class="meta">全 6 格 · 连续分镜</span>
+      </article>
+      <article class="card" data-cat="校园" data-text="黑板报 粉笔 值日 放学">
+        <span class="tag">校园</span>
+        <h3>黑板报的边角</h3>
+        <p>值日生留下画黑板报，豆包负责最右下角的图案。豆包漫画的校园线由此展开。</p>
+        <span class="meta">全 8 格 · 校园线第一篇</span>
+      </article>
+      <article class="card" data-cat="生活观察" data-text="搬家 纸箱 旧物 阳台">
+        <span class="tag">生活观察</span>
+        <h3>纸箱里的旧物</h3>
+        <p>搬家时翻出旧车票和半盒蜡笔。豆包漫画在这一篇里尝试用静物特写代替人物出场。</p>
+        <span class="meta">全 10 格 · 静物分镜</span>
+      </article>
+    </div>
+    <p class="empty" id="empty">没有找到匹配的篇章，换个关键词或切回“全部”试试。</p>
+  </section>
+
+  <section id="guide" class="wrap">
+    <div class="sec-head">
+      <h2>阅读指南</h2>
+      <span class="sub">第一次来，从这里开始</span>
+      <span class="rule"></span>
+    </div>
+    <div class="list">
+      <div class="item">
+        <span class="num">1</span>
+        <div>
+          <h3>先读简介再挑选</h3>
+          <p>每张卡片都写着格数与形式，四格、连续分镜、无对白各占一类。豆包漫画的篇章彼此独立，从任意一篇读起都不会断线。</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="num">2</span>
+        <div>
+          <h3>按分镜节奏读</h3>
+          <p>豆包漫画多为竖排阅读，一格接一格自上而下。无对白篇目靠画面里的小物件推进，放慢一点更容易看出前后呼应。</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="num">3</span>
+        <div>
+          <h3>留意重复的小道具</h3>
+          <p>豆浆杯、橡皮、旧车票会在不同篇章里再次出现。豆包漫画用这些日常物件串起角色之间若即若离的联系。</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="num">4</span>
+        <div>
+          <h3>关注更新记录</h3>
+          <p>新篇按周整理在更新记录里，标注篇名与格数。想追校园线的读者，可以直接从“黑板报的边角”往后看。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="about" class="wrap">
+    <div class="sec-head">
+      <h2>关于本站</h2>
+      <span class="sub">角色、风格与内容范围</span>
+      <span class="rule"></span>
+    </div>
+    <div class="split">
+      <div class="prose">
+        <p>豆包漫画的主角是一颗没有固定职业的豆包：圆脸、两条短眉、走路时轻轻晃。它不出远门，也不解决大问题，主要活动范围是家、早餐铺、教室和公交站台这几处。</p>
+        <p>风格上，豆包漫画以短篇为主，单篇多在四到十二格之间，画面留白较多，对白克制。日常篇偏轻松，校园篇带一点安静的幽默，生活观察篇则更接近默片，几乎不依赖文字。</p>
+        <p>内容范围上，本站只收录已完成并校对过度的小篇，不放连载预告，也不做付费解锁。每篇附上格数、形式与一句话简介，方便读者按时间与口味取舍。</p>
+      </div>
+      <aside class="panel">
+        <h3>角色与设定</h3>
+        <ul>
+          <li><strong>豆包：</strong>主角，圆脸，喜欢靠窗的位置。</li>
+          <li><strong>同桌：</strong>校园线常驻，话少，爱借东西。</li>
+          <li><strong>早餐铺老板：</strong>只在日常篇出现，记得每位常客的口味。</li>
+        </ul>
+        <div class="chips">
+          <span class="chip">短篇为主</span>
+          <span class="chip">竖排阅读</span>
+          <span class="chip">对白克制</span>
+          <span class="chip">生活物件</span>
+        </div>
+      </aside>
+    </div>
+  </section>
+
+  <section id="updates" class="wrap">
+    <div class="sec-head">
+      <h2>更新记录</h2>
+      <span class="sub">按周整理，标明篇名与格数</span>
+      <span class="rule"></span>
+    </div>
+    <div class="list">
+      <div class="item">
+        <span class="num">新</span>
+        <div>
+          <h3>《纸箱里的旧物》上线</h3>
+          <p>生活观察线新增一篇静物分镜，全 10 格。豆包漫画首次尝试让人物完全不出镜，只靠旧物特写讲完一段搬家经过。</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="num">校</span>
+        <div>
+          <h3>校园线补完</h3>
+          <p>《课桌上的橡皮》与《黑板报的边角》完成校对，前者为四格，后者为八格。豆包漫画的校园线至此形成前后相连的阅读顺序。</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="num">修</span>
+        <div>
+          <h3>分镜顺序微调</h3>
+          <p>《末班车之前》第九格与第八格对调，让站台灯光的变化更连贯。豆包漫画的读者若已读过，可重看结尾两格。</p>
+        </div>
+      </div>
+      <div class="item">
+        <span class="num">备</span>
+        <div>
+          <h3>合订本制作中</h3>
+          <p>豆包漫画计划把现有六篇合成一份离线阅读文件，包含目录与角色页，完成后在本页开放下载入口。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="wrap">
+    <div class="cta">
+      <div>
+        <h2>从一篇短篇开始</h2>
+        <p>挑一篇四格看过瘾，或下载合订本留着慢慢翻。豆包漫画的六个短篇都可以单独读。</p>
+      </div>
+      <div class="cta-actions">
+        <a class="btn" href="#series">回到漫画目录</a>
+        <a class="btn ghost" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1">下载</a>
+      </div>
+    </div>
+  </section>
+</main>
+
+<footer class="site">
+  <div class="wrap foot-grid">
+    <div class="foot-brand">
+      <svg viewBox="0 0 64 64" aria-hidden="true">
+        <rect width="64" height="64" rx="14" fill="#fff3e0"/>
+        <circle cx="32" cy="30" r="17" fill="#f2b457"/>
+        <circle cx="25" cy="27" r="2.6" fill="#3b2f2a"/>
+        <circle cx="39" cy="27" r="2.6" fill="#3b2f2a"/>
+        <path d="M26 37q6 5 12 0" stroke="#3b2f2a" stroke-width="2.4" fill="none" stroke-linecap="round"/>
+      </svg>
+      豆包漫画
+    </div>
+    <nav class="foot-links" aria-label="页尾导航">
+      <a href="#series">漫画目录</a>
+      <a href="#guide">阅读指南</a>
+      <a href="#about">关于本站</a>
+      <a href="#updates">更新记录</a>
+    </nav>
+    <p class="foot-note">豆包漫画 · 日常短篇与小故事索引，内容以已完成的独立篇章为准。合订本下载入口开放前保持占位状态。</p>
+  </div>
+</footer>
+
+<script>
+(function(){
+  var kw = document.getElementById('kw');
+  var cat = document.getElementById('cat');
+  var grid = document.getElementById('grid');
+  var cards = Array.prototype.slice.call(grid.querySelectorAll('.card'));
+  var count = document.getElementById('count');
+  var empty = document.getElementById('empty');
+
+  function apply(){
+    var q = (kw.value || '').trim().toLowerCase();
+    var c = cat.value;
+    var shown = 0;
+    cards.forEach(function(card){
+      var text = (card.getAttribute('data-text') + ' ' + card.querySelector('h3').textContent).toLowerCase();
+      var okCat = (c === 'all' || card.getAttribute('data-cat') === c);
+      var okKw = (!q || text.indexOf(q) !== -1);
+      var show = okCat && okKw;
+      card.style.display = show ? '' : 'none';
+      if(show) shown++;
+    });
+    count.textContent = '共 ' + shown + ' 篇';
+    empty.style.display = shown === 0 ? 'block' : 'none';
+  }
+
+  kw.addEventListener('input', apply);
+  cat.addEventListener('change', apply);
+  apply();
+})();
+</script>
+</body>
+</html>
