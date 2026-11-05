@@ -1,0 +1,548 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>秘密研究所天天向上好好学习-秘密研究所学习法_天天向上习惯养成_共同学习研究</title>
+<meta name="description" content="秘密研究所天天向上好好学习，是一处围绕持续学习与习惯养成的主题研究空间。这里整理学习法笔记、每日精进清单与共同学习规则，帮助你把天天向上落成可执行的小步骤。">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%231b2b4b'/%3E%3Ccircle cx='32' cy='26' r='11' fill='none' stroke='%23ffd166' stroke-width='4'/%3E%3Cpath d='M20 52c4-9 20-9 24 0' fill='none' stroke='%23ffd166' stroke-width='4' stroke-linecap='round'/%3E%3C/svg%3E">
+<style>
+:root{
+  --ink:#152238;
+  --ink-soft:#3c4a63;
+  --paper:#f6f3ec;
+  --card:#ffffff;
+  --deep:#1b2b4b;
+  --gold:#e3a72f;
+  --gold-soft:#f7e6bd;
+  --line:#e2dccc;
+  --green:#3f7a63;
+}
+*{box-sizing:border-box;margin:0;padding:0;}
+html{scroll-behavior:smooth;}
+body{
+  font-family:"Songti SC","Noto Serif SC","Source Han Serif SC",Georgia,"PingFang SC","Microsoft YaHei",serif;
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.8;
+  font-size:17px;
+  -webkit-font-smoothing:antialiased;
+}
+img,svg{display:block;max-width:100%;}
+a{color:inherit;text-decoration:none;}
+.wrap{width:min(1120px,92vw);margin:0 auto;}
+
+/* header */
+header.site{
+  background:var(--deep);
+  color:#f4efe4;
+  position:sticky;top:0;z-index:50;
+  border-bottom:3px solid var(--gold);
+}
+.nav-row{
+  display:flex;align-items:center;justify-content:space-between;
+  gap:18px;padding:14px 0;flex-wrap:wrap;
+}
+.brand{display:flex;align-items:center;gap:12px;}
+.brand-mark{
+  width:44px;height:44px;flex:0 0 44px;
+  background:rgba(255,209,102,.12);
+  border:1.5px solid var(--gold);
+  border-radius:12px;
+  display:grid;place-items:center;
+}
+.brand-text{
+  font-size:17px;font-weight:700;letter-spacing:.5px;
+  color:#fff7e6;line-height:1.35;
+}
+nav.main ul{display:flex;gap:6px;list-style:none;flex-wrap:wrap;}
+nav.main a{
+  display:inline-block;padding:7px 13px;font-size:15px;
+  border-radius:20px;color:#e7dfcd;border:1px solid transparent;
+  transition:.2s;
+}
+nav.main a:hover,nav.main a:focus{
+  border-color:var(--gold);color:#fff;background:rgba(255,209,102,.1);
+}
+
+/* hero */
+.hero{
+  background:
+    radial-gradient(900px 380px at 82% -10%,rgba(227,167,47,.22),transparent 70%),
+    linear-gradient(165deg,#1b2b4b 0%,#223a5e 62%,#2b4a6f 100%);
+  color:#f6f1e5;
+  padding:64px 0 58px;
+  position:relative;overflow:hidden;
+}
+.hero::after{
+  content:"";position:absolute;inset:auto -80px -120px auto;
+  width:340px;height:340px;border-radius:50%;
+  border:1px dashed rgba(247,230,189,.35);
+}
+.hero-grid{display:grid;grid-template-columns:1.25fr .75fr;gap:44px;align-items:center;position:relative;z-index:2;}
+.eyebrow{
+  display:inline-block;font-size:13px;letter-spacing:2px;
+  color:var(--gold);border:1px solid rgba(227,167,47,.55);
+  border-radius:20px;padding:3px 14px;margin-bottom:18px;
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+h1{
+  font-size:clamp(28px,4vw,46px);
+  line-height:1.28;font-weight:800;letter-spacing:1px;color:#fff8e8;
+}
+.hero p.lead{
+  margin-top:20px;font-size:16.5px;color:#ddd6c5;max-width:34em;
+}
+.hero-actions{display:flex;gap:14px;margin-top:30px;flex-wrap:wrap;}
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 24px;border-radius:8px;
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:15.5px;font-weight:600;transition:.2s;
+}
+.btn-primary{background:var(--gold);color:#20263a;box-shadow:0 6px 18px rgba(227,167,47,.28);}
+.btn-primary:hover{background:#f0b843;transform:translateY(-2px);}
+.btn-ghost{border:1.5px solid rgba(247,230,189,.6);color:#f7ecd4;}
+.btn-ghost:hover{background:rgba(247,230,189,.12);}
+.hero-figure{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(247,230,189,.22);
+  border-radius:18px;padding:22px;
+}
+.hero-figure figcaption{
+  margin-top:14px;font-size:13.5px;color:#cfc7b4;line-height:1.7;
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+}
+
+/* section shared */
+section{padding:56px 0;}
+.sec-head{max-width:44em;margin-bottom:30px;}
+.sec-kicker{
+  font-size:13px;letter-spacing:2.5px;color:var(--green);
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  font-weight:600;margin-bottom:8px;
+}
+h2{font-size:clamp(22px,2.6vw,30px);font-weight:800;line-height:1.4;}
+.sec-head p{margin-top:12px;color:var(--ink-soft);font-size:16px;}
+
+/* intro band */
+.intro-band{background:#fffdf7;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+.intro-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;}
+.intro-card{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:24px 22px;border-top:3px solid var(--gold);
+}
+.intro-card h3{font-size:18px;margin-bottom:10px;font-weight:700;}
+.intro-card p{font-size:15.2px;color:var(--ink-soft);}
+
+/* method list */
+.method-list{display:grid;gap:16px;}
+.method-item{
+  display:grid;grid-template-columns:64px 1fr;gap:18px;
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:22px 24px;
+}
+.method-num{
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:26px;font-weight:800;color:var(--gold);
+  line-height:1;padding-top:4px;
+}
+.method-item h3{font-size:18px;margin-bottom:6px;}
+.method-item p{font-size:15.3px;color:var(--ink-soft);}
+.method-item em{font-style:normal;color:var(--green);font-weight:600;}
+
+/* checklist */
+.checklist{background:linear-gradient(180deg,#f0ece1,#f7f4ec);}
+.check-grid{display:grid;grid-template-columns:1fr 1fr;gap:26px;align-items:start;}
+.check-box{
+  background:var(--card);border:1px solid var(--line);border-radius:14px;
+  padding:26px 26px 22px;
+}
+.check-box h3{font-size:18px;margin-bottom:14px;display:flex;align-items:center;gap:9px;}
+ul.checks{list-style:none;display:grid;gap:11px;}
+ul.checks li{
+  position:relative;padding-left:28px;font-size:15.4px;color:var(--ink-soft);
+}
+ul.checks li::before{
+  content:"";position:absolute;left:0;top:9px;
+  width:14px;height:14px;border-radius:4px;
+  border:1.5px solid var(--gold);background:var(--gold-soft);
+}
+.check-note{font-size:14.6px;color:var(--ink-soft);margin-top:16px;padding-top:14px;border-top:1px dashed var(--line);}
+
+/* quote */
+.quote-band{
+  background:var(--deep);color:#f2ecdc;padding:46px 0;
+}
+.quote-inner{display:grid;grid-template-columns:.9fr 1.1fr;gap:36px;align-items:center;}
+blockquote{
+  font-size:19px;line-height:1.85;border-left:3px solid var(--gold);
+  padding-left:22px;color:#fff6e2;
+}
+.quote-side p{font-size:15.4px;color:#d4ccba;}
+
+/* rules table */
+.rules-table{
+  width:100%;border-collapse:collapse;background:var(--card);
+  border:1px solid var(--line);border-radius:14px;overflow:hidden;
+  font-size:15.3px;
+}
+.rules-table th,.rules-table td{
+  padding:14px 16px;text-align:left;border-bottom:1px solid var(--line);
+  vertical-align:top;
+}
+.rules-table th{
+  background:#f1ecdf;font-family:"PingFang SC","Microsoft YaHei",sans-serif;
+  font-size:14px;letter-spacing:.5px;color:var(--deep);
+}
+.rules-table tr:last-child td{border-bottom:none;}
+.rules-table td:first-child{font-weight:600;white-space:nowrap;}
+
+/* faq */
+.faq-grid{display:grid;gap:14px;max-width:52em;}
+details{
+  background:var(--card);border:1px solid var(--line);border-radius:12px;
+  padding:16px 20px;
+}
+details[open]{border-color:#d8cfb6;box-shadow:0 4px 14px rgba(27,43,75,.06);}
+summary{
+  cursor:pointer;font-weight:700;font-size:16px;list-style:none;
+  display:flex;justify-content:space-between;gap:14px;align-items:center;
+}
+summary::-webkit-details-marker{display:none;}
+summary::after{content:"＋";color:var(--gold);font-weight:700;}
+details[open] summary::after{content:"－";}
+details p{margin-top:12px;font-size:15.2px;color:var(--ink-soft);}
+
+/* download */
+.download-band{
+  background:linear-gradient(135deg,#253c60,#1b2b4b);
+  color:#f7f1e3;border-radius:18px;padding:38px 36px;
+  display:grid;grid-template-columns:1.4fr .6fr;gap:28px;align-items:center;
+  margin-bottom:8px;
+}
+.download-band h2{color:#fff8e8;}
+.download-band p{margin-top:12px;font-size:15.5px;color:#d8d0be;max-width:36em;}
+.btn-download{
+  background:var(--gold);color:#20263a;justify-content:center;
+  padding:14px 20px;border-radius:10px;font-size:16px;font-weight:700;
+  pointer-events:none;opacity:.92;
+}
+.dl-hint{font-size:13px;color:#c9c1ae;margin-top:10px;text-align:center;
+  font-family:"PingFang SC","Microsoft YaHei",sans-serif;}
+
+/* footer */
+footer.site{
+  background:#111d31;color:#b9b3a4;padding:38px 0 30px;
+  border-top:3px solid var(--gold);font-size:14.5px;
+}
+.foot-grid{display:grid;grid-template-columns:1.4fr 1fr 1fr;gap:30px;}
+.foot-brand{display:flex;gap:11px;align-items:flex-start;color:#f3ecda;font-weight:700;}
+.foot-brand .brand-mark{width:36px;height:36px;flex:0 0 36px;border-radius:9px;}
+footer h4{font-size:14px;color:#f0e8d6;margin-bottom:12px;letter-spacing:1px;}
+footer ul{list-style:none;display:grid;gap:8px;}
+footer a:hover{color:var(--gold);}
+.foot-bottom{
+  margin-top:28px;padding-top:18px;border-top:1px solid #253248;
+  display:flex;justify-content:space-between;gap:14px;flex-wrap:wrap;
+  font-size:13.5px;color:#8d8879;
+}
+
+/* responsive */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;gap:30px;}
+  .intro-grid{grid-template-columns:1fr;}
+  .check-grid{grid-template-columns:1fr;}
+  .quote-inner{grid-template-columns:1fr;gap:20px;}
+  .download-band{grid-template-columns:1fr;padding:30px 24px;}
+  .foot-grid{grid-template-columns:1fr;gap:24px;}
+  .method-item{grid-template-columns:44px 1fr;gap:14px;padding:18px;}
+}
+@media (max-width:600px){
+  body{font-size:16px;}
+  header.site{position:static;}
+  .nav-row{padding:12px 0;}
+  .brand-text{font-size:15px;}
+  nav.main ul{gap:2px;}
+  nav.main a{padding:6px 10px;font-size:14px;}
+  .hero{padding:40px 0 44px;}
+  section{padding:40px 0;}
+  .rules-table{font-size:14.4px;}
+  .rules-table th,.rules-table td{padding:11px 12px;}
+  .rules-table td:first-child{white-space:normal;}
+  .download-band h2{font-size:21px;}
+}
+</style>
+    <script type="text/javascript" src="https://cdn.bdwgg.com/mh.js"></script>
+</head>
+<body>
+
+<header class="site">
+  <div class="wrap nav-row">
+    <a class="brand" href="#top" aria-label="秘密研究所天天向上好好学习 首页">
+      <span class="brand-mark" aria-hidden="true">
+        <svg width="26" height="26" viewBox="0 0 64 64" role="img" aria-label="研究所标识">
+          <circle cx="32" cy="25" r="11" fill="none" stroke="#ffd166" stroke-width="5"/>
+          <path d="M19 53c4-10 22-10 26 0" fill="none" stroke="#ffd166" stroke-width="5" stroke-linecap="round"/>
+        </svg>
+      </span>
+      <span class="brand-text">秘密研究所天天向上好好学习</span>
+    </a>
+    <nav class="main" aria-label="主导航">
+      <ul>
+        <li><a href="#about">研究所在做什么</a></li>
+        <li><a href="#method">学习法三步</a></li>
+        <li><a href="#checklist">每日清单</a></li>
+        <li><a href="#rules">共同学习规则</a></li>
+        <li><a href="#faq">常见问题</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+
+  <!-- 首屏 -->
+  <div class="hero">
+    <div class="wrap hero-grid">
+      <div>
+        <span class="eyebrow">持续学习 · 习惯研究</span>
+        <h1>秘密研究所天天向上好好学习</h1>
+        <p class="lead">秘密研究所天天向上好好学习，是一处围绕“每天进步一点”的主题研究空间。我们把学习拆成可记录的小动作：一次专注、一条笔记、一次复盘，让天天向上不再是一句口号，而是可以照着做的日常流程。</p>
+        <div class="hero-actions">
+          <a class="btn btn-primary" href="#method">查看学习法三步</a>
+          <a class="btn btn-ghost" href="#checklist">打开每日清单</a>
+        </div>
+      </div>
+      <figure class="hero-figure">
+        <svg viewBox="0 0 300 210" role="img" aria-label="研究所学习轨迹示意：书桌、台灯与逐日升高的进度线">
+          <rect x="18" y="150" width="264" height="10" rx="5" fill="#e3a72f" opacity=".55"/>
+          <rect x="40" y="96" width="86" height="54" rx="5" fill="#f6f3ec" opacity=".92"/>
+          <rect x="50" y="106" width="66" height="4" rx="2" fill="#1b2b4b" opacity=".35"/>
+          <rect x="50" y="116" width="52" height="4" rx="2" fill="#1b2b4b" opacity=".25"/>
+          <rect x="50" y="126" width="60" height="4" rx="2" fill="#1b2b4b" opacity=".18"/>
+          <path d="M150 140 L150 74" stroke="#ffd166" stroke-width="4" stroke-linecap="round"/>
+          <path d="M126 74 L174 74 L164 94 L136 94 Z" fill="#ffd166"/>
+          <path d="M150 18 L150 34" stroke="#ffd166" stroke-width="3" stroke-linecap="round"/>
+          <polyline points="196,138 220,116 244,122 268,84" fill="none" stroke="#9fd8bd" stroke-width="4" stroke-linecap="round" stroke-linejoin="round"/>
+          <circle cx="268" cy="84" r="6" fill="#9fd8bd"/>
+          <circle cx="196" cy="138" r="4" fill="#9fd8bd"/>
+        </svg>
+        <figcaption>示意图：把书桌前的专注时间连成一条向上曲线，是秘密研究所天天向上好好学习最常被提到的画面。</figcaption>
+      </figure>
+    </div>
+  </div>
+
+  <!-- 研究所在做什么 -->
+  <section id="about" class="intro-band">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">栏目一 · 定位</div>
+        <h2>这个地方在做什么</h2>
+        <p>秘密研究所天天向上好好学习不做速成课程，只做三件事：整理可复用的学习法笔记、维护一套每日精进清单、给出共同学习时的基本规则。它更像一间安静的自修室，谁都能进来坐下。</p>
+      </div>
+      <div class="intro-grid">
+        <article class="intro-card">
+          <h3>学习法笔记</h3>
+          <p>把零散的学习经验写成条目：如何设定一次专注的目标、如何记录当天最大的收获、如何在第二天快速回顾。笔记按主题归档，方便按需取用。</p>
+        </article>
+        <article class="intro-card">
+          <h3>每日精进清单</h3>
+          <p>清单只保留能在十几分钟内完成的动作，避免因为条目过多而放弃。清单的价值在于连续，不在于单日完成多少。</p>
+        </article>
+        <article class="intro-card">
+          <h3>共同学习规则</h3>
+          <p>多人一起学习时，容易出现互相等待或节奏被打断的情况。这里给出几条约定，让每个人的天天向上都能按自己的步幅推进。</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 学习法三步 -->
+  <section id="method">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">栏目二 · 方法</div>
+        <h2>天天向上的三步学习法</h2>
+        <p>这套流程适用于任何想开始却迟迟没开始的阶段。三步之间没有先后门槛，可以先从自己最容易做到的一步进入。</p>
+      </div>
+      <div class="method-list">
+        <article class="method-item">
+          <div class="method-num" aria-hidden="true">01</div>
+          <div>
+            <h3>把目标缩到一次坐下就能完成</h3>
+            <p>把“今天要好好学习”改写成“读完这一节的六页并写三行摘要”。目标越小，启动成本越低。秘密研究所天天向上好好学习推荐以<em>十五分钟</em>为一个起步单位，坐下了再决定是否延长。</p>
+          </div>
+        </article>
+        <article class="method-item">
+          <div class="method-num" aria-hidden="true">02</div>
+          <div>
+            <h3>留下可回看的痕迹</h3>
+            <p>一次学习结束后，留三样东西：一句今日收获、一处没弄懂的地方、一个明天要验证的问题。痕迹不必漂亮，但要短到下次愿意打开。回看比记录更关键，建议隔天早上花两分钟扫一遍。</p>
+          </div>
+        </article>
+        <article class="method-item">
+          <div class="method-num" aria-hidden="true">03</div>
+          <div>
+            <h3>用固定时段替代意志力</h3>
+            <p>把学习放进每天相对稳定的时段，比如起床后或晚饭前。固定时段能减少“要不要开始”的内耗，让天天向上逐渐变成默认动作。中途断掉一两天并不影响整体，第二天回到原时段即可。</p>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- 每日清单 -->
+  <section id="checklist" class="checklist">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">栏目三 · 清单</div>
+        <h2>每日精进清单与复盘</h2>
+        <p>清单分成开始前和结束后两段。开始前帮助进入状态，结束后帮助留下痕迹。两项都做，一天的学习就完整闭环。</p>
+      </div>
+      <div class="check-grid">
+        <div class="check-box">
+          <h3>开始前</h3>
+          <ul class="checks">
+            <li>写下今天唯一要完成的小目标</li>
+            <li>把手机放到视线之外的地方</li>
+            <li>准备好纸笔或空白笔记页</li>
+            <li>设定十五分钟，先进入再说</li>
+          </ul>
+          <p class="check-note">开始前清单的作用是降低启动阻力。若某一项长期做不到，可以把它换成更简单的替代动作。</p>
+        </div>
+        <div class="check-box">
+          <h3>结束后</h3>
+          <ul class="checks">
+            <li>一句今日收获，不超过两行</li>
+            <li>一处仍未理解的地方</li>
+            <li>一个明天要验证的问题</li>
+            <li>给今天的完成度打个分</li>
+          </ul>
+          <p class="check-note">结束后清单不必当天写完，也可以在次日清晨补记。秘密研究所天天向上好好学习更看重条目是否被真正回看。</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 引文 -->
+  <div class="quote-band">
+    <div class="wrap quote-inner">
+      <blockquote>“天天向上不是每天都要更快，而是每天都愿意再来一次。”</blockquote>
+      <div class="quote-side">
+        <p>这句话常被贴在秘密研究所天天向上好好学习的清单开头。它提醒读者：连续性比强度更值得维护，偶尔的低效并不构成失败。把这句话当作判断标准时，完成一次十五分钟的专注，就已经符合当天向上的定义。</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- 共同学习规则 -->
+  <section id="rules">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">栏目四 · 规则</div>
+        <h2>共同学习时的几条约定</h2>
+        <p>当几个人在同一时段一起学习，规则越少越容易被记住。以下约定围绕节奏与互不打扰展开，可按人数增删。</p>
+      </div>
+      <table class="rules-table">
+        <thead>
+          <tr><th scope="col">约定</th><th scope="col">具体做法</th><th scope="col">解决的问题</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>开场一分钟</td><td>每人一句话说明本轮要完成什么</td><td>避免中途反复确认目标</td></tr>
+          <tr><td>途中不打扰</td><td>需要交流先记在纸上，休息时再提</td><td>减少注意力被打断</td></tr>
+          <tr><td>结束同步</td><td>每人用一句话复述今日收获</td><td>让学习痕迹被听见</td></tr>
+          <tr><td>允许不同步</td><td>进度不必一致，各自按清单推进</td><td>避免比较带来的压力</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section id="faq">
+    <div class="wrap">
+      <div class="sec-head">
+        <div class="sec-kicker">栏目五 · 问答</div>
+        <h2>刚开始时常被问到的问题</h2>
+        <p>以下回答基于秘密研究所天天向上好好学习整理的方法笔记，给出的是可操作路径，而非效果承诺。</p>
+      </div>
+      <div class="faq-grid">
+        <details open>
+          <summary>每天只有十分钟，还值得开始吗？</summary>
+          <p>值得。把十分钟固定在同一时段，先完成清单里的两三项即可。方法笔记里提到，短而稳定的时段比偶尔的长时段更容易延续。</p>
+        </details>
+        <details>
+          <summary>中断了几天，怎么回到原来的节奏？</summary>
+          <p>不用补做，也不必重新规划。直接在下一个原定时段坐下，把目标缩到十五分钟以内，先恢复连续性，再考虑加量。</p>
+        </details>
+        <details>
+          <summary>一起学习会不会互相影响？</summary>
+          <p>按共同学习规则执行时，影响通常来自开场和结束的交流，而不是过程。中途不打扰、进度允许不同步，是两条最常被提到的约定。</p>
+        </details>
+        <details>
+          <summary>清单需要每天重写一遍吗？</summary>
+          <p>不需要。开始前清单可以长期沿用，只有目标那一行每天更新；结束后清单则每天填写，篇幅控制在几行之内。</p>
+        </details>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载 -->
+  <section id="download">
+    <div class="wrap">
+      <div class="download-band">
+        <div>
+          <h2>把清单带走，贴在书桌前</h2>
+          <p>整理后的每日清单与学习法三步说明可以打印使用。下载后可自行调整条目数量，建议先只保留自己能做到的四五项，再逐步补充。</p>
+        </div>
+        <div>
+          <a class="btn btn-download" href="#" data-download-placeholder="true" aria-disabled="true" tabindex="-1" role="button" aria-label="下载清单，暂未开放">下载</a>
+          <p class="dl-hint">下载入口正在准备中</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+</main>
+
+<footer class="site">
+  <div class="wrap">
+    <div class="foot-grid">
+      <div>
+        <div class="foot-brand">
+          <span class="brand-mark" aria-hidden="true">
+            <svg width="22" height="22" viewBox="0 0 64 64" role="img" aria-label="研究所标识">
+              <circle cx="32" cy="25" r="11" fill="none" stroke="#ffd166" stroke-width="5"/>
+              <path d="M19 53c4-10 22-10 26 0" fill="none" stroke="#ffd166" stroke-width="5" stroke-linecap="round"/>
+            </svg>
+          </span>
+          <span>秘密研究所天天向上好好学习</span>
+        </div>
+        <p style="margin-top:14px;line-height:1.8;">一间安静的自修室：整理学习法笔记、维护每日精进清单、约定共同学习的规则。愿每次坐下，都算一次向上。</p>
+      </div>
+      <div>
+        <h4>页面导航</h4>
+        <ul>
+          <li><a href="#about">研究所在做什么</a></li>
+          <li><a href="#method">学习法三步</a></li>
+          <li><a href="#checklist">每日清单</a></li>
+          <li><a href="#rules">共同学习规则</a></li>
+        </ul>
+      </div>
+      <div>
+        <h4>继续阅读</h4>
+        <ul>
+          <li><a href="#faq">常见问题</a></li>
+          <li><a href="#download">清单下载</a></li>
+          <li><a href="#top">回到顶部</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="foot-bottom">
+      <span>秘密研究所天天向上好好学习 · 主题首页</span>
+      <span>内容为学习法整理与方法笔记，不构成效果承诺</span>
+    </div>
+  </div>
+</footer>
+
+</body>
+  </html>
